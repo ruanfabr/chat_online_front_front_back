@@ -24,7 +24,7 @@ function App() {
 
         <Route
         exact
-        path='/chat'
+        path='/chat/:idChat'
         element={<rota.Chat />}
         />
       </Routes>

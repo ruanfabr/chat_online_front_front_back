@@ -1,13 +1,12 @@
 .rainbow-animate{
     background: 
-    linear-gradient(rgb(208, 228, 255) 0%, rgb(149, 195, 255) 25%, rgb(176, 121, 228) 50%, rgb(114, 56, 168) 75%,rgb(146, 69, 182) 100%) 0 0/100% 200%;
-    transition: all;
+    linear-gradient(rgb(208, 228, 255) 0%, rgb(149, 195, 255) 25%, rgb(176, 121, 228) 50%, rgb(114, 56, 168) 65%, rgb(146, 69, 182) 80%, rgb(208, 228, 255) 100%) 0 0/100% 200%;
 }
 
 .rainbow-animate:hover {
-    background: rgb(146, 69, 182);
+    /* background: rgb(146, 69, 182); */
     transition: all 1s;
-    animation: passing 1s linear;
+    animation: passing 1s ease-in-out;
 }
 
 @keyframes passing{
