@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { IoMdSend } from "react-icons/io";
 
 export default function Chat(){

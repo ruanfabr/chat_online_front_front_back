@@ -9,4 +9,8 @@ const io = new Server(server, {
     cors: {origin: 'http://localhost:5173'}
 })
 
+io.on('connection', socket => {
+    console.log('Usuário conectado', socket.id)
+})
+
 server.listen(8080, () => console.log('api rodando na porta 8080'))
