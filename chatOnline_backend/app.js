@@ -11,6 +11,16 @@ const io = new Server(server, {
 
 io.on('connection', socket => {
     console.log('Usuário conectado', socket.id)
+
+    socket.on('set_username', username => {
+        socket.data.username = username
+
+        console.log(socket.data.username)
+    })
+
+    socket.on('disconnect', reason => {
+        console.log(`Usuário ${socket.data.username} desconectou`, socket.id)
+    })
 })
 
 server.listen(8080, () => console.log('api rodando na porta 8080'))
