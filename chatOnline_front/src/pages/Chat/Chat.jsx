@@ -2,7 +2,6 @@ import { useRef } from "react";
 import { IoMdSend } from "react-icons/io";
 
 export default function Chat(){
-
     return(
         <div>
             <div className='h-[43rem] bg-white rounded-lg flex'>

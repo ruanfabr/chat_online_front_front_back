@@ -5,29 +5,22 @@ import * as rota from './Routes.jsx';
 function App() {
 
   return (
-    // <div className='h-screen bg-slate-300 flex flex-col justify-center items-center'>
-
-    //   {
-    //     chatVisibility ? <Chat /> : <Join />
-    //   }
-
-    // </div>
     <>
     <div className='h-screen bg-slate-300 flex flex-col justify-center items-center'>
-      <Routes>
+        <Routes>
 
-        <Route
-        exact
-        path='/'
-        element={<rota.Join/>}
-        />
+          <Route
+          exact
+          path='/'
+          element={<rota.Join/>}
+          />
 
-        <Route
-        exact
-        path='/chat/:idChat'
-        element={<rota.Chat />}
-        />
-      </Routes>
+          <Route
+          exact
+          path='/chat/:idChat'
+          element={<rota.Chat />}
+          />
+        </Routes>
     </div>
     </>
   )
