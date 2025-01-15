@@ -10,16 +10,27 @@ const io = new Server(server, {
 })
 
 io.on('connection', socket => {
-    console.log('Usuário conectado', socket.id)
 
-    socket.on('set_username', username => {
-        socket.data.username = username
+    socket.on('set_user', userInfo => {
+        socket.data.username = userInfo.name
+        socket.data.chatRoom = userInfo.chatRoom
 
-        console.log(socket.data.username)
+        console.log(`Usuário: ${socket.data.username} || id: ${socket.id} \nse conectou na sala ${socket.data.chatRoom}`)
     })
 
     socket.on('disconnect', reason => {
-        console.log(`Usuário ${socket.data.username} desconectou`, socket.id)
+        if (socket.data.username){
+            console.log(`Usuário ${socket.data.username} desconectou`, socket.id)
+        }
+    })
+
+    socket.on('send_message', message => {
+        io.emit('receive_message', {
+            message,
+            authorId: socket.id,
+            authorName: socket.data.username,
+            chatRoom: socket.data.chatRoom
+        })
     })
 })
 

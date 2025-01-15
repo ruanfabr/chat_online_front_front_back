@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import username from "./userSlice";
+import user from "./slicers/userSlice";
+import message from "./slicers/messageSlice";
 
 export default configureStore({
     reducer: {
-        username: username
+        user: user,
+        message: message 
     },
 })
