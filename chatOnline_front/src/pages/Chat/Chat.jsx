@@ -3,12 +3,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { sendMessage } from "../../components/redux/slicers/messageSlice";
 import { socket } from "../../components/socketIo/socket";
 import { useState, useEffect } from "react";
-import Message from "../../components/chat_components/Message.jsx";
+import Message_send from "../../components/chat_components/Message.jsx";
 
 
 export default function Chat(){
   const [chatMessages, setChatMessages] = useState([])
 
+  const username = useSelector((state) => state.user.name)
   const message = useSelector((state) => state.message.contentMessage);
   const chatRoom = useSelector((state) => state.user.chatRoom)
   const dispatch = useDispatch();
@@ -67,7 +68,7 @@ export default function Chat(){
             {
               chatMessages.map((item) => {
                   return (
-                  <Message message_content={item.message} author={item.author}/>
+                  <Message_send message_content={item.message} author={item.authorName} receive={item.authorName != username}/>
                   )
               })
             }
