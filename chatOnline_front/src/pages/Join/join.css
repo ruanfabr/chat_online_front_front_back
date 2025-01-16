@@ -2,6 +2,7 @@
     background: 
     linear-gradient(rgb(122, 174, 243) 0%, rgb(149, 195, 255) 25%, rgb(133, 123, 218) 50%, rgb(114, 56, 168) 65%, rgb(146, 69, 182) 80%, rgb(122, 174, 243) 100%) 0 0/100% 200%;
     color: white;
+    font-weight: bold;
 }
 
 .rainbow-animate:hover {
@@ -15,7 +16,7 @@
         color: white;
     }
     50%{
-        color: black;
+        color: rgb(213, 181, 243);
     }
     75%{
         color: white;

@@ -47,7 +47,7 @@ export default function Chat(){
 
     return(
         <div>
-          <div className='h-[43rem] bg-slate-200 rounded-lg flex shadow-2xl'>
+          <div className='h-[43rem] bg-slate-200 rounded-lg flex shadow-2xl max-sm:h-screen max-sm:w-screen'>
 
           <div className='w-full h-full flex flex-col py-3'>
 
@@ -69,7 +69,10 @@ export default function Chat(){
 
             <div className='self-center flex space-x-7 items-center pt-3 px-4'>
               
-              <input type="text" name="" className='border rounded-xl w-[50rem] py-2 px-4 focus:outline-none focus:ring-1 focus:bg-slate-50' value={message} onChange={(e) => handleChange(e.target.value)} onKeyDown={(key) => handleEnter(key)}/>
+              <input type="text" name="" 
+              value={message} onChange={(e) => handleChange(e.target.value)} onKeyDown={(key) => handleEnter(key)}
+              className='border rounded-xl w-[50rem] max-sm:w-full py-2 px-4 focus:outline-none focus:ring-1 focus:bg-slate-50'
+              />
 
               <div data-tooltip='send'>
                 <button onClick={send}>
@@ -81,7 +84,7 @@ export default function Chat(){
 
           </div>
 
-      </div>
         </div>
+      </div>
     )
 }
