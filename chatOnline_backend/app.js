@@ -10,12 +10,12 @@ const io = new Server(server, {
 })
 
 io.on('connection', socket => {
-
     socket.on('set_user', userInfo => {
         socket.data.username = userInfo.name
         socket.data.chatRoom = userInfo.chatRoom
-
+        
         console.log(`Usuário: ${socket.data.username} || id: ${socket.id} \nse conectou na sala ${socket.data.chatRoom}`)
+        socket.join(socket.data.chatRoom)
     })
 
     socket.on('disconnect', reason => {
@@ -25,7 +25,7 @@ io.on('connection', socket => {
     })
 
     socket.on('send_message', message => {
-        io.emit('receive_message', {
+        io.to(socket.data.chatRoom).emit('receive_message', {
             message,
             authorId: socket.id,
             authorName: socket.data.username,
